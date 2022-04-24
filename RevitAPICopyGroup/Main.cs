@@ -14,13 +14,13 @@ namespace RevitAPICopyGroup
     [Transaction(TransactionMode.Manual)]
     public class Main : IExternalCommand
     {
-        public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
+        public Result Execute(ExternalCommandData _commandData, ref string message, ElementSet elements)
         {
             try
             {
                 GroupPickFilter groupPickFilter = new GroupPickFilter();
 
-                UIApplication uiapp = commandData.Application;
+                UIApplication uiapp = _commandData.Application;
                 UIDocument uidoc = uiapp.ActiveUIDocument;
                 Document doc = uidoc.Document;
 
